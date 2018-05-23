@@ -23,7 +23,9 @@
       </td>
      </tr>
     </table>
+    <% if @bookl.user == current_user %>
     <%= link_to "編集", edit_user_path(@bookl.user), class: 'btn btn-default glyphicon glyphicon-wrench box' %>
+    <% end %>
    </div>
 
    <div class="createbox">

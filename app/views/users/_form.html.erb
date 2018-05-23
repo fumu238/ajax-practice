@@ -23,7 +23,9 @@
      </td>
     </tr>
   </table>
+  <% if current_user == user %>
    <%= link_to "編集", edit_user_path(user), class: 'btn btn-default box glyphicon glyphicon-wrench' %>
+   <% end %>
    </div>
 
   <div class="createbox">
@@ -33,11 +35,10 @@
 
     <h4>Title</h4>
       <%= f.text_field :title, class: 'box' %>
-     
     <h4>Body</h4>
       <%= f.text_area :body, class: 'box' %>
 
     <%= f.submit 'Create book', class: 'box btn btn-info'%>
     <% end %>
+    </div>
   </div>
-</div>

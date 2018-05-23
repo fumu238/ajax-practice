@@ -8,12 +8,27 @@
       you can share and exchange your opinions , inpressions , and emotions<br>
       about varioius books!
   </p>
+  <% if user_signed_in? %>
+      <div>
+      <%= link_to "Sign up", root_path, class: "btn btn-primary col-md-11" %>
+      </div>
+      <div>
+      <%= link_to "Log in", root_path, class: "btn btn-success col-md-11" %>
+      </div>
+
+      <% else %>
+
+
       <div>
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary col-md-11" %>
       </div>
       <div>
       <%= link_to "Log in", new_user_session_path, class: "btn btn-success col-md-11" %>
       </div>
+
+      <% end %>
+
+
 
     <div class="col-md-3"></div>
  </div>
