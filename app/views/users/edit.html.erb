@@ -1,3 +1,13 @@
+ <% if @user.errors.any? %>
+    <h3>入力した内容にエラーが<%= @user.errors.count %>件あります</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
 <div class="editbox">
   <h2>プロフィール編集
   </h2>
@@ -21,6 +31,6 @@
     <%= f.text_field :intro %>
     </div>
 
-    <%= f.submit "Uodate", class:'btn btn-info' %>
+    <%= f.submit "更新", class:'btn btn-info' %>
   <% end %>
 </div>

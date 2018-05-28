@@ -1,8 +1,9 @@
+
 <div class="container">
  <div class="row">
 
    <div class="col-lg-3">
-
+    <%= flash[:message] %>
     <div class="info">
      <h2>User info</h2>
      <%= attachment_image_tag @bookl.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "pro.jpg", size: "100x100"%>

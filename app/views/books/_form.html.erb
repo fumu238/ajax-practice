@@ -1,8 +1,7 @@
 <div class="container">
  <div class="row">
-
    <div class="col-lg-3">
-
+    <%= flash[:message] %>
     <div class="info">
      <h2>User info</h2>
      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "pro.jpg", size: "100x100"%>
@@ -28,6 +27,14 @@
 
    <div class="createbox">
    <h3>New book</h3>
+   <% if book.errors.any? %>
+    <h3>入力した内容にエラーが<%= book.errors.count %>件あります</h3>
+    <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
     <%= form_for(@book) do |f| %>
 
