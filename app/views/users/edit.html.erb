@@ -15,7 +15,7 @@
  
     <div class="edit">
     <%= f.label :Name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name %>
     </div>
 
     <div class="user-edit-image">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="edit">
-    <%= f.attachment_field :profile_image,placeholder:"プロフィール画像" %>
+    <%= f.attachment_field :profile_image,placeholder:"プロフィール画像" , multiple: true %>
     </div>
 
     <div class="edit">

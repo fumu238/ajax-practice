@@ -4,8 +4,19 @@ class BooksController < ApplicationController
 
 
   def index
-      @books = Book.all
+      # params[:q]['title_or_body_cont_all'] = params[:q]['title_or_body_cont_all'].split(/[\p{blank}\s]+/)
+      # binding.pry
+      @words = params[:q].delete(:title_or_body_cont) if params[:q].present?
+     if @words.present?
+      params[:q][:groupings] = []
+      @words.split(/[ 　]/).each_with_index do |word, i| #全角空白と半角空白で切って、単語ごとに処理します
+      params[:q][:groupings][i] = { title_or_body_cont: word }
+       end
+     end
+      @q = Book.ransack(params[:q])
+      @books = @q.result.page(params[:page]).reverse_order
       @book = Book.new
+      @all = Book.all
   end
 
   def show

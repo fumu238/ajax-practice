@@ -16,7 +16,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
+a {
+   text-decoration: none !important;
+}
 * {
   margin: 0;
   padding: 0;
@@ -62,8 +64,18 @@
  text-align:right;
  padding-right:200px;
  }
-
-
-/*---show.html.erb---*/
-
-/*---show.html.erb---*/
+ .page a {
+   display:inline-block;
+  border:solid 1px;
+  border-radius: 30px;
+  color:gray;
+  padding:2px 8px;
+ }
+.current {
+ background-color: black;
+ display:inline-block;
+  border:solid 1px;
+  border-radius: 30px;
+  color:gray;
+  padding:2px 8px;
+ }

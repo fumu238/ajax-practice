@@ -10,5 +10,5 @@
    validates :intro, length: { maximum: 50 }
 
    has_many :books
-
+   has_many :likes, dependent: :destroy
 end
